@@ -10,18 +10,15 @@ A module to use in conjunction with Backbone and the [window resize watcher](htt
 ### Usage
 
 ```JavaScript
-
-var ElementResizer = require("element-resizer");
+var ElementResizer = require('element-resizer');
 
 $(function() {
 
-  var bbevents = _.extend({}, Backbone.Events);
-
-  this.resizer = new ElementResizer(bbevents);
+  this.resizer = new ElementResizer(Backbone.Events);
 
   this.resizer.resize({
-    el: $(".halfheight"),
-    parent: $(window),
+    el: this.el.getElementsByClassName('halfheight')[0],
+    parent: window,
     width: 1,
     height: 0.5,
     center: true
