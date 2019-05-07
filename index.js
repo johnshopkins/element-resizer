@@ -6,21 +6,11 @@ function doResize (options) {
   var marginLeft = 0;
 
   // innerWidth (window)
-  // offsetWidth (elements)
-  var relativeWidth = options.parent.innerWidth || options.parent.offsetWidth;
-  var relativeHeight = options.parent.innerHeight || options.parent.offsetHeight;
+  // clientWidth (elements)
+  var relativeWidth = options.parent.innerWidth || options.parent.clientWidth;
+  var relativeHeight = options.parent.innerHeight || options.parent.clientHeight;
 
   var relativeRatio = relativeWidth / relativeHeight;
-
-
-  // if (options.parentJ.width() !== relativeWidth) {
-  //   console.log('widths do not match!')
-  // }
-  //
-  // if (options.parentJ.height() !== relativeHeight) {
-  //   console.log('heights do not match!')
-  // }
-
 
   if (!options.ratio) {
 
