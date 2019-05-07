@@ -1,14 +1,23 @@
+function isWindow(obj) {
+  return obj != null && obj === obj.window;
+}
+
 function doResize (options) {
 
   var h;
   var w;
+  var relativeWidth;
+  var relativeHeight;
   var marginTop = 0;
   var marginLeft = 0;
 
-  // innerWidth (window)
-  // clientWidth (elements)
-  var relativeWidth = options.parent.innerWidth || options.parent.clientWidth;
-  var relativeHeight = options.parent.innerHeight || options.parent.clientHeight;
+  if (isWindow(options.parent)) {
+    // use document element
+    options.parent = document.documentElement;
+  }
+
+  relativeWidth = options.parent.clientWidth;
+  relativeHeight = options.parent.clientHeight;
 
   var relativeRatio = relativeWidth / relativeHeight;
 
