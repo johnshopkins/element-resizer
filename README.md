@@ -1,11 +1,6 @@
 # window resize window
 
-A module to use in conjunction with Backbone and the [window resize watcher](https://github.com/johnshopkins/window-resize-watcher) module. Resizes an element relative to a parent element and takes care of resizing the element again on each screen resize.
-
-### Dependencies
-
-* Backbone
-* Underscore
+A module to use in conjunction with the [window resize watcher](https://github.com/johnshopkins/window-resize-watcher) module. Resizes an element relative to a parent element and takes care of resizing the element again on each screen resize.
 
 ### Usage
 
