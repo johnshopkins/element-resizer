@@ -62,10 +62,8 @@ function doResize (options) {
 
 // ElemenetResizer object
 
-var ElementResizer = function (eventsObject) {
-
-  this.vent = eventsObject;
-
+var ElementResizer = function (eventname) {
+  this.eventname = eventname || 'winresize:done';
 };
 
 ElementResizer.prototype.resize = function (opts) {
@@ -85,8 +83,8 @@ ElementResizer.prototype.resize = function (opts) {
 
   doResize(options);
 
-  this.vent.on("winresize:done", function () {
-    doResize(options);
+  window.addEventListener(this.eventname, function () {
+    doResize(options)
   });
 
 };
